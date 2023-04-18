@@ -25,6 +25,7 @@ canvas {
     position: absolute;
     transition: .25s all;
 	z-index: 10;
+    width: 100%;
 }
 
 .disabled {
@@ -118,27 +119,6 @@ button[type="button"] {
 	border-radius: 5px;
 	margin-bottom: 15px;
 }
-
-#zombiecraft {
-	background-color: black;
-	background-image: url(https://zc.stephcraft.net/assets/image/header.png);
-	background-size: cover;
-	background-position: center;
-	color: white;
-	padding: 15px 15px;
-}
-
-#zombiecraft div {
-	-webkit-user-select: none; /* Safari */
-	-ms-user-select: none; /* IE 10 and IE 11 */
-  	user-select: none; /* Standard syntax */
-}
-
-#zombiecraft p {
-	font-family: Minecraftia;
-	font-size: .75em;
-}
-
 h2 {
 	margin: 0px;
 	margin-bottom: 1em;
@@ -169,42 +149,6 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
-}
-
-button[type="button"].copy {
-	padding: 8px 9px;
-}
-
-button[type="button"].twitter {
-	padding: 8px 9px;
-}
-
-.twitter {
-	background: #1DA1F2 !important;
-}
-
-.twitter:hover {
-	background: #60b7ee !important;
-}
-
-.twitter:active {
-	background: rgb(153, 208, 243) !important;
-}
-
-button[type="button"].discord {
-	padding: 8px 8px;
-}
-
-button[type="button"].discord {
-	background: #5865F2;
-}
-
-button[type="button"].discord:hover {
-	background: #858ef0;
-}
-
-button[type="button"].discord:active {
-	background: #a6abe7;
 }
 
 a {
@@ -250,7 +194,14 @@ a:hover {
 .tooltip:hover .tooltip-content {
     visibility: visible;
 }
-
+.achieved{
+    text-align: center;
+    font-size: 2em;
+    margin-top: 10vh;
+    font-weight: bold;
+    color: #4286f4;
+    display: none;
+}
 /* touch screen */
 
 @media (hover: none) {

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Puzzle</title>
+
+	<!-- responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<!-- meta -->
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="referrer" content="no-referrer">
+	<meta name="title" content="Puzzle">
+
+	<script src=meta.js></script>
+	<script src="https://kit.fontawesome.com/a228862dbf.js" crossorigin="anonymous"></script>
+	<!-- style -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body touch-action=none unresolved>
+	<div class="ui disabled">
+		<h1 class="achieved" id="achieved">Lo has conseguido!, te has demorado: </h1>
+		<!-- functionalities -->
+		<div class=ui-container>
+			<div class=tooltip>
+				<span class=tooltip-content>Pista</span>
+				<div class=functionality onclick="hint()">
+					<i class="fas fa-eye"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- scripts -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+	<script src=plugins/transform.js></script>
+	<script src=jigsaw.js></script>
+	<script src=script.js></script>
+</body>
+</html>
