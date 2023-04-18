@@ -197,10 +197,16 @@ a:hover {
 .achieved{
     text-align: center;
     font-size: 2em;
-    margin-top: 10vh;
+    margin-top: 14vh;
     font-weight: bold;
-    color: #4286f4;
+    color: #f0d81d;
     display: none;
+    padding: 0 2em;
+}
+@media (max-width: 600px) {
+    .achieved{
+        font-size: 1.5em;
+    }
 }
 /* touch screen */
 

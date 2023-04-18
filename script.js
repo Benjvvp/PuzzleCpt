@@ -401,9 +401,6 @@ function onSolve() {
   
   let output = "";
   
-  if (days > 0) {
-    output += `${days} día${days > 1 ? 's' : ''}, `;
-  }
   if (hours > 0) {
     output += `${hours} hora${hours > 1 ? 's' : ''}, `;
   }
@@ -414,7 +411,7 @@ function onSolve() {
     output += `${seconds} segundo${seconds > 1 ? 's' : ''}`;
   }
   
-  output = output.trim();
+  output.trim();
 
   document.getElementById("achieved").style.display = "block";
   document.getElementById("achieved").innerHTML = `¡Enhorabuena! Has completado el rompecabezas en ${output}!`
