@@ -415,6 +415,14 @@ function onSolve() {
 
   document.getElementById("achieved").style.display = "block";
   document.getElementById("achieved").innerHTML = `¡Enhorabuena! Has completado el rompecabezas en ${output}!`
+  
+  setTimeout(() => {
+    document.getElementById("achieved").style.display = "none";
+    document.getElementById("achievedVideoContainer").classList.add("active");
+    document.querySelector(".ui").classList.add("disabled")
+    document.querySelector(".videoAchieved").play();
+  }, 1000);
+
   solved = true;
   previewing = millis();
 
