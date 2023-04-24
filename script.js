@@ -393,35 +393,14 @@ function onComplete() {
 }
 
 function onSolve() {
-  dateTwo = new Date();
-  const timeDiff = Math.abs(dateTwo - dateOne);
-  const hours = Math.floor(timeDiff / (1000 * 60 * 60));
-  const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
-  const seconds = Math.floor((timeDiff / 1000) % 60);
-  
-  let output = "";
-  
-  if (hours > 0) {
-    output += `${hours} hora${hours > 1 ? 's' : ''}, `;
-  }
-  if (minutes > 0) {
-    output += `${minutes} minuto${minutes > 1 ? 's' : ''}, `;
-  }
-  if (seconds > 0) {
-    output += `${seconds} segundo${seconds > 1 ? 's' : ''}`;
-  }
-  
-  output.trim();
-
-  document.getElementById("achieved").style.display = "block";
-  document.getElementById("achieved").innerHTML = `¡Enhorabuena! Has completado el rompecabezas en ${output}!`
+  document.getElementById("achivied").classList.add("active");
   
   setTimeout(() => {
-    document.getElementById("achieved").style.display = "none";
+    document.getElementById("achivied").classList.remove("active");
     document.getElementById("achievedVideoContainer").classList.add("active");
     document.querySelector(".ui").classList.add("disabled")
     document.querySelector(".videoAchieved").play();
-  }, 1000);
+  }, 5000);
 
   solved = true;
   previewing = millis();

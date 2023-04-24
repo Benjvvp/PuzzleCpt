@@ -194,14 +194,24 @@ a:hover {
 .tooltip:hover .tooltip-content {
     visibility: visible;
 }
-.achieved{
-    text-align: center;
-    font-size: 2em;
-    margin-top: 14vh;
-    font-weight: bold;
-    color: #f0d81d;
-    display: none;
-    padding: 0 2em;
+.achivied{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 0;
+    width: 100%;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition: height 0ms 500ms, opacity 1s 0ms;
+}
+.achivied.active{
+    height: 100%;
+    opacity: 1;
+    transition: height 0ms 0ms, opacity 1s 0ms;
 }
 .achievedVideoContainer{
     position: absolute;
