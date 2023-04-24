@@ -43,7 +43,7 @@ function preload(){
 }
 
 function setup() {
-  const imageURL = `${window.location.origin}/public/main.jpg`;
+  const imageURL = `${window.location.origin}/public/main.jpeg`;
 
   
   canvas = createCanvas(windowWidth, windowHeight);
@@ -82,8 +82,8 @@ function start() {
   while (aspect.x * aspect.y <= 9)
     aspect = { x: parseInt(aspect.x * 2), y: parseInt(aspect.y * 2) };
 
-  cols = aspect.x;
-  rows = aspect.y;
+  cols = 5;
+  rows = 3;
   scl = 0.5;
 
   progress = o = numFrames(img) * 2;
