@@ -84,7 +84,7 @@ function start() {
 
   cols = 5;
   rows = 3;
-  scl = 0.5;
+  scl = 0.6;
 
   progress = o = numFrames(img) * 2;
 
@@ -128,18 +128,18 @@ function start() {
 
       switch (orientation) {
         case HORIZONTAL:
-          positionX = ((side * preview.width) / 2) * random(1.15, 1.9);
+          positionX = ((side * preview.width) / 2) * random(1.05, 1.5);
           positionY = random(
-            (-preview.height / 2) * 1.15,
-            (preview.height / 2) * 1.15
+            (-preview.height / 2) * 1.05,
+            (preview.height / 2) * 1.05
           );
           break;
         case VERTICAL:
           positionX = random(
-            (-preview.width / 2) * 1.9,
-            (preview.width / 2) * 1.9
+            (-preview.width / 2) * 1.5,
+            (preview.width / 2) * 1.5
           );
-          positionY = ((side * preview.height) / 2) * random(1.15, 1.45);
+          positionY = ((side * preview.height) / 2) * random(1.05, 1.2);
           break;
       }
 
@@ -400,7 +400,7 @@ function onSolve() {
     document.getElementById("achievedVideoContainer").classList.add("active");
     document.querySelector(".ui").classList.add("disabled")
     document.querySelector(".videoAchieved").play();
-  }, 5000);
+  }, 3000);
 
   solved = true;
   previewing = millis();
