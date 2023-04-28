@@ -2,7 +2,7 @@ var canvas;
 
 var img, preview, frame;
 var tiles, pieces, placed, unplaced, puzzle, board;
-var bgimage, bgy
+var bgimage, bgy;
 var cols, rows, aspect;
 var cropX, cropY;
 var scl, s;
@@ -38,14 +38,13 @@ const VERTICAL = "vertical";
 
 var prev;
 
-function preload(){
+function preload() {
   bgimage = loadImage(`${window.location.origin}/public/fondo-grupo-cpt.jpg`);
 }
 
 function setup() {
   const imageURL = `${window.location.origin}/public/main.jpeg`;
 
-  
   canvas = createCanvas(windowWidth, windowHeight);
 
   // p5*js plugins
@@ -215,8 +214,7 @@ function draw() {
   s = Math.min(width / img.width, height / img.height) * scl;
   frame = parseInt((0.5 * frameCount) % numFrames(img));
 
-  background(bgimage)
-
+  background(bgimage);
 
   // transform
   translate(width / 2, height / 2);
@@ -247,7 +245,7 @@ function draw() {
   // board background
   rectMode(CENTER);
   noStroke();
-  fill(55,60,76, previewAlpha);
+  fill(55, 60, 76, previewAlpha);
   rect(0, 0, puzzle.width, puzzle.height);
   // puzzle board
   if (!solved) {
@@ -372,7 +370,7 @@ function onPieceRelease(piece) {
       console.log(puzzle.pieces.size, puzzle.count);
       //Cuando la primera pieza sea colocada guardar fecha
       if (puzzle.pieces.size == 1) {
-       dateOne = new Date();
+        dateOne = new Date();
       }
 
       if (puzzle.pieces.size == puzzle.count) onComplete();
@@ -394,11 +392,12 @@ function onComplete() {
 
 function onSolve() {
   document.getElementById("achivied").classList.add("active");
-  
+
   setTimeout(() => {
     document.getElementById("achivied").classList.remove("active");
     document.getElementById("achievedVideoContainer").classList.add("active");
-    document.querySelector(".ui").classList.add("disabled")
+    document.getElementById("videoAchieved").play();
+    document.querySelector(".ui").classList.add("disabled");
     document.querySelector(".videoAchieved").play();
   }, 3000);
 
@@ -496,10 +495,15 @@ class Piece {
   update() {
     this.over();
 
-    // Adjust location if being dragged
     if (this.dragging) {
-      this.x = mouseX / s + this.offsetX;
-      this.y = mouseY / s + this.offsetY;
+      const leftBound = -puzzle.width / 1.3 + this.w / 2;
+      const rightBound = puzzle.width / 1.3 - this.w / 2;
+      const topBound = -puzzle.height / 1.1 + this.h / 2;
+      const bottomBound = puzzle.height / 1.1 - this.h / 2;
+  
+      console.log(this.x, this.y);
+      this.x = constrain(mouseX / s + this.offsetX, leftBound, rightBound);
+      this.y = constrain(mouseY / s + this.offsetY, topBound, bottomBound);
     }
   }
 
