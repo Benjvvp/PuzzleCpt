@@ -397,8 +397,7 @@ function onSolve() {
     document.getElementById("achivied").classList.remove("active");
     document.getElementById("achievedVideoContainer").classList.add("active");
     document.getElementById("videoAchieved").play();
-    document.querySelector(".ui").classList.add("disabled");
-    document.querySelector(".videoAchieved").play();
+    document.querySelector(".ui").classList.add("disabled");    
   }, 3000);
 
   solved = true;
